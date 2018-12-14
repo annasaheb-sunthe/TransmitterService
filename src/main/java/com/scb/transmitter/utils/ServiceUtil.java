@@ -6,10 +6,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Random;
 
 import org.springframework.stereotype.Component;
 
+import com.scb.transmitter.model.AuditLog;
 import com.scb.transmitter.model.MsAuditLog;
 import com.scb.transmitter.model.MsErrorLog;
 import com.scb.transmitter.model.RequestData;
@@ -94,5 +96,16 @@ public class ServiceUtil {
 				.stackTrace(toByteArray(e)).build();
 
 		return errorLog;
+	}
+	
+	public AuditLog getAuditLog(RequestData requestData, String status, String message) {
+		return AuditLog.builder().transactionType(requestData.getTransactionType())
+				.transactionSubType(requestData.getTransactionSubType())
+				.transactionId(requestData.getTransactionID())
+				.serviceName("TransmitterService")
+				.messageType(requestData.getPayloadFormat())
+				.status(status)
+				.message(message)
+				.timestamp(new Date()).build();
 	}
 }

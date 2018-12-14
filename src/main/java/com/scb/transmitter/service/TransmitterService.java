@@ -17,17 +17,9 @@ public interface TransmitterService {
 	
 	public List<TransmitterModel> getTransmitterByMethod(TransmitterModel transmitterData);
 	
-	List<TransmitterModel> getAllTransmitterData();
+	public List<TransmitterModel> getAllTransmitterData();
 	
 	public TransmitterModel getTransmitterById(long transmitterId);
 
-	
+	public void DeleteTransmitterModel(long transmitterId);
 }
-
-
-/*
-final ClientHttpRequestFactory clientHttpRequestFactory =
-new MyCustomClientHttpRequestFactory(org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER, serverInfo);
-restTemplate.setRequestFactory(clientHttpRequestFactory);
-
-*/

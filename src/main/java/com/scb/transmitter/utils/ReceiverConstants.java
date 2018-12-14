@@ -11,4 +11,5 @@ public interface ReceiverConstants {
 	public static final String GET_TRANSMITTER_BY_TYPE_URL="/transmitterByType";
 	public static final String GET_ALL_TRANSMITTER_URL="/allTransmitters";
 	public static final String GET_TRANSMITTER_BY_ID_URL="/transmitterById/{transmitterId}";
+	public static final String DELETE_TRANSMITTER_URL="/deleteTransmitter/{transmitterId}";
 }

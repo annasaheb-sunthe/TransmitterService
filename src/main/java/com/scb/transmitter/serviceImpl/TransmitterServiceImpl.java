@@ -172,6 +172,12 @@ public class TransmitterServiceImpl implements TransmitterService {
 		return list;
 	}
 
+	@Override
+	public void DeleteTransmitterModel(long transmitterId) {
+		transmitterRepository.delete(getTransmitterById(transmitterId));
+		
+	}
+
 	private TransmitterModel getMetadataModel(RequestData requestData) {
 		return new TransmitterModel().builder().transactionType(requestData.getTransactionType())
 				.transactionSubType(requestData.getTransactionSubType()).transmitterMethod(requestData.getPayloadFormat())
