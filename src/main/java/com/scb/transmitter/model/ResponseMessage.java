@@ -16,4 +16,5 @@ import lombok.ToString;
 public class ResponseMessage {
 	private long responseCode;
 	private String responseMessage;
+	private String responseData;
 }
